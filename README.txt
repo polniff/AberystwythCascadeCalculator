@@ -10,7 +10,6 @@ marks.txt is where you should put you marks under the headings year, credits and
 It is filled in as an example, grades for a First class degree are inputted, leave the first line(with the headings) and fill in the rest with your own marks
 
 Fill in as follows:
-    Year -> either 2 or 3 depending on which uni year the module was (2nd or 3rd), the first number of the module code
-    credits -> how many credits the module was, the last 2 numbers of the module code
-    mark -> the score in the module
+    module -> the module code for the module
+    mark  -> overall score in the module
 
