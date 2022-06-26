@@ -1,11 +1,24 @@
 import numpy as np
 import pandas as pd
 
+def readData():
+    data = pd.read_csv('marks.txt')
+    out_modules = []
+    for i in data.index: 
+        module = data.loc[i]['module']
+        score = data.loc[i]['mark']
+        numeric_values ="".join(filter(str.isdigit, module))
+        ar = []
+        ar.extend(numeric_values)
+        credits = ar[-2:]
+        credit_value = int(credits[0] + credits[1])
+        year = int(ar[0]   )  
+        out_modules.append([year, credit_value, score])
+    return out_modules
+
 def sortMarks(): 
     # sorts marks by credit, lowest credit to highest
-    data = pd.read_csv('cascadeCalc\marks.txt')
-    credit_sorted = data.sort_values(by=['credit'])
-    marks = pd.DataFrame.to_numpy(credit_sorted)
+    marks = readData()
     total_credits = 0
     out_marks = []
     for i in range(len(marks)):
